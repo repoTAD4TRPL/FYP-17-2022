@@ -20,6 +20,6 @@
 - Outlook
 - Chrome atau aplikasi sejenis untuk browser
 - MySQL
-- # Konfigurasi untuk menjalanakan aplikasi web atau mobile :
+# Konfigurasi untuk menjalanakan aplikasi web atau mobile :
 - melakukan Import Database
 - Menghubungkan Database ke UiPath
