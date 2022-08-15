@@ -1,0 +1,107 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RekapitulasiIPK" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ConnectionString" Type="InArgument(ui:DatabaseConnection)" />
+    <x:Property Name="Pilihan_Angkatan" Type="InArgument(x:String)" />
+    <x:Property Name="Pilihan_Nama_Program_Studi" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:RekapitulasiIPK.ConnectionString>
+    <InArgument x:TypeArguments="ui:DatabaseConnection" />
+  </this:RekapitulasiIPK.ConnectionString>
+  <this:RekapitulasiIPK.Pilihan_Angkatan>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RekapitulasiIPK.Pilihan_Angkatan>
+  <this:RekapitulasiIPK.Pilihan_Nama_Program_Studi>
+    <InArgument x:TypeArguments="x:String" />
+  </this:RekapitulasiIPK.Pilihan_Nama_Program_Studi>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>722.4,602.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>RekapitulasiIPK_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RekapitulasiIPK" sap:VirtualizedContainerService.HintSize="375.2,338.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Rekapitulasi_Nilai" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_Rekapitulasi_Nilai]" DisplayName="Query Rekapitulasi IPK" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[&quot;Select IPK.Nama_Program_Studi, IPK.Angkatan, COUNT(IPK.NIM) Jumlah_Mahasiswa, MIN(IPK.IP_Sementara) MIN_IP, AVG(IPK.IP_Sementara) AVG_IPK, MAX(IPK.IP_Sementara) MAX_IP From(Select M.NIM, M.Nama, M.Angkatan, P.Nama_Program_Studi, Jumlah_SKS, SUM(MK.SKS *  Nilai_Angka.Nilai_Angka) Total_Nilai, SUM(MK.SKS *  Nilai_Angka.Nilai_Angka)/Jumlah_SKS IP_Sementara From nilai N INNER Join mata_kuliah MK On MK.Id_Mata_Kuliah = N.Id_Mata_Kuliah INNER Join mahasiswa M On M.NIM = N.NIM INNER Join program_studi P On M.Id_Program_Studi = P.Id_Program_Studi INNER Join (Select SUM(MK2.sks) Jumlah_SKS, N2.NIM From mata_kuliah MK2 INNER Join nilai N2 On MK2.Id_Mata_Kuliah = N2.Id_Mata_Kuliah Group By N2.NIM) Jumlah_SKS On Jumlah_SKS.NIM = N.NIM INNER Join (Select Case When N3.Nilai = 'A' Then 4 When N3.Nilai = 'AB' Then 3.5 When N3.Nilai = 'B' Then 3 When N3.Nilai = 'BC' Then 2.5  When N3.Nilai = 'C' Then 2 When N3.Nilai = 'D' Then 1  When N3.Nilai = 'E' Then 0 End Nilai_Angka, N3.Id_Nilai From Nilai N3) Nilai_Angka On Nilai_Angka.Id_Nilai = N.Id_Nilai Where M.Angkatan = &quot; + Pilihan_Angkatan + &quot; And P.Nama_Program_Studi = '&quot; + Pilihan_Nama_Program_Studi + &quot;' Group By N.NIM Order By M.NIM) IPK;&quot;]">
+      <ui:ExecuteQuery.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:ExecuteQuery.Parameters>
+    </ui:ExecuteQuery>
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_Rekapitulasi_Nilai]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Rekapitulasi IPK Mahasiswa" WorkbookPath="Rekapitulasi IPK Mahasiswa.xlsx">
+      <ui:WriteRange.StartingCell>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:WriteRange.StartingCell>
+    </ui:WriteRange>
+  </Sequence>
+</Activity>

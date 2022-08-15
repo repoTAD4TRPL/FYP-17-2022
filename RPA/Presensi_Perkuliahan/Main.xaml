@@ -1,0 +1,449 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="925.6,2736.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PresensiPerkuliahan" sap:VirtualizedContainerService.HintSize="936,2672" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:DatabaseConnection" Name="ConnectionString" />
+      <Variable x:TypeArguments="x:String" Name="Pilihan_Nama_Program_Studi" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Nama_Program_Studi" />
+      <Variable x:TypeArguments="x:String" Name="Pilihan_Tahun_Ajaran" />
+      <Variable x:TypeArguments="x:String" Name="Pilihan_Semester" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Data_Kehadiran_Mahasiswa" />
+      <Variable x:TypeArguments="x:String" Name="Query_Data_Kehadiran_Mahasiswa" />
+      <Variable x:TypeArguments="x:String" Name="Semester" />
+      <Variable x:TypeArguments="x:String" Name="Pilihan_Mata_Kuliah" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Nama_Mata_Kuliah" />
+      <Variable x:TypeArguments="x:String" Name="SheetName" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Rekapitulasi_Kehadiran" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="894.4,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="Dsn=CIS" DatabaseConnection="[ConnectionString]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PilihTahunAjaran" sap:VirtualizedContainerService.HintSize="894.4,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflow\PilihTahunAjaran.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InOutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="894.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[Pilihan_Tahun_Ajaran]" />
+    <Sequence DisplayName="PilihSemester" sap:VirtualizedContainerService.HintSize="894.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog PilihSemester" sap:VirtualizedContainerService.HintSize="652,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Pilih Semester" OptionsString="Ganjil;Genap" Title="Semsester">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[Pilihan_Semester]</OutArgument>
+        </ui:InputDialog.Result>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InputDialog>
+      <If Condition="[Pilihan_Semester = &quot;Genap&quot;]" DisplayName="If Semester" sap:VirtualizedContainerService.HintSize="652,312" sap2010:WorkflowViewState.IdRef="If_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Semester]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">0</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[Semester]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">1</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="894.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[Pilihan_Semester]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PilihProgramStudi" sap:VirtualizedContainerService.HintSize="894.4,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflow\PilihProgramStudi.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InOutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Nama_Program_Studi">[dt_Nama_Program_Studi]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <WriteLine DisplayName="Write Line Pilihan_Nama_Program_Studi" sap:VirtualizedContainerService.HintSize="894.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Pilihan_Nama_Program_Studi]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PilihNamaMataKuliah" sap:VirtualizedContainerService.HintSize="894.4,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Workflow\PilihNamaMataKuliah.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="Semester">[Semester]</InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Pilihan_Mata_Kuliah]</InOutArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Nama_Mata_Kuliah">[dt_Nama_Mata_Kuliah]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <WriteLine DisplayName="Write Line Pilihan_Mata_Kuliah" sap:VirtualizedContainerService.HintSize="894.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[Pilihan_Mata_Kuliah]" />
+    <Assign sap:VirtualizedContainerService.HintSize="894.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Query_Data_Kehadiran_Mahasiswa]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">SELECT M.NIM, M.Nama, P.Nama_Program_Studi, C.Kode_Kelas, MK.Nama_Mata_Kuliah, D.Nama AS 'Nama Dosen', MK.Tahun_Ajaran, J.Week, J.Sesi, K.Status_Kehadiran FROM `kehadiran` K INNER JOIN `jadwal` J INNER JOIN `mata_kuliah` MK INNER JOIN `mahasiswa` M INNER JOIN `dosen` D INNER JOIN `program_studi` P INNER JOIN `kelas` C WHERE K.Id_Jadwal = J.Id_Jadwal AND K.NIM = M.NIM AND M.Id_Program_Studi = P.Id_Program_Studi AND J.Id_Mata_Kuliah = MK.Id_Mata_Kuliah AND MK.Id_Program_Studi = P.Id_Program_Studi AND MK.NIDN_Dosen_Coordinator = D.NIDN AND D.Id_Program_Studi = P.Id_Program_Studi AND M.Id_Kelas = C.Id_Kelas </InArgument>
+      </Assign.Value>
+    </Assign>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="894.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[Query_Data_Kehadiran_Mahasiswa]" />
+    <If Condition="[Pilihan_Mata_Kuliah = &quot;Semua Mata Kuliah&quot;]" DisplayName="If Pilihan Mata Kuliah" sap:VirtualizedContainerService.HintSize="894.4,1480" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="475.2,1320.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Nama_Mata_Kuliah]" DisplayName="For Each Program Studi" sap:VirtualizedContainerService.HintSize="433.6,1135.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,1019.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="Nama_Mata_Kuliah" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign Nama_Program_Studi" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Nama_Mata_Kuliah]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[CurrentRow.Item(0).ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Assign Query_Data_Kehadiran_Mahasiswa" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[Query_Data_Kehadiran_Mahasiswa]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Query_Data_Kehadiran_Mahasiswa + "AND MK.Tahun_Ajaran = '" + Pilihan_Tahun_Ajaran + "' AND P.Nama_Program_Studi = '" + Pilihan_Nama_Program_Studi + "' AND MK.Nama_Mata_Kuliah = '" + Nama_Mata_Kuliah + "' ORDER BY M.NIM, MK.Tahun_Ajaran, MK.Nama_Mata_Kuliah, J.Week, J.Sesi;"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <WriteLine DisplayName="Write Line Query_Data_Kehadiran_Mahasiswa" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[Query_Data_Kehadiran_Mahasiswa]" />
+                  <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_Data_Kehadiran_Mahasiswa]" DisplayName="Run query Query_Data_Kehadiran_Mahasiswa" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_3" Sql="[Query_Data_Kehadiran_Mahasiswa]">
+                    <ui:ExecuteQuery.Parameters>
+                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    </ui:ExecuteQuery.Parameters>
+                  </ui:ExecuteQuery>
+                  <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[SheetName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[Pilihan_Mata_Kuliah.Substring(0,30)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:WriteRange AddHeaders="True" DataTable="[dt_Data_Kehadiran_Mahasiswa]" DisplayName="Write Range Data Kehadiran Mahasiswa.xlsx&quot;" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="[SheetName]" WorkbookPath="Data Kehadiran Mahasiswa.xlsx">
+                    <ui:WriteRange.StartingCell>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:WriteRange.StartingCell>
+                  </ui:WriteRange>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KirimEmailKeMahasiswaAbsen" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Workflow\KirimEmailKeMahasiswaAbsen.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Nama_Mata_Kuliah]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KirimEmailKeDosenWali" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Workflow\KirimEmailKeDosenWali.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Nama_Mata_Kuliah]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RekapitulasiKehadiran" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Workflow\RekapitulasiKehadiran.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Nama_Mata_Kuliah]</InArgument>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Rekapitulasi_Kehadiran">[dt_Rekapitulasi_Kehadiran]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KirimEmailRekapitulasi" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Workflow\KirimEmailRekapitulasi.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Semester">[Pilihan_Semester]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,1012" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign Query_Data_Kehadiran_Mahasiswa" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Query_Data_Kehadiran_Mahasiswa]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Query_Data_Kehadiran_Mahasiswa + "AND MK.Tahun_Ajaran = '" + Pilihan_Tahun_Ajaran + "' AND P.Nama_Program_Studi = '" + Pilihan_Nama_Program_Studi + "' AND MK.Nama_Mata_Kuliah = '" + Pilihan_Mata_Kuliah + "' ORDER BY M.NIM, MK.Tahun_Ajaran, MK.Nama_Mata_Kuliah, J.Week, J.Sesi;"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <WriteLine DisplayName="Write Line Query_Data_Kehadiran_Mahasiswa" sap:VirtualizedContainerService.HintSize="333.6,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[Query_Data_Kehadiran_Mahasiswa]" />
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_Data_Kehadiran_Mahasiswa]" DisplayName="Run query Query_Data_Kehadiran_Mahasiswa" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" Sql="[Query_Data_Kehadiran_Mahasiswa]">
+            <ui:ExecuteQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:ExecuteQuery>
+          <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[SheetName]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Pilihan_Mata_Kuliah.Substring(0,30)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:WriteRange AddHeaders="True" DataTable="[dt_Data_Kehadiran_Mahasiswa]" DisplayName="Write Range Data Kehadiran Mahasiswa.xlsx&quot;" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[SheetName]" WorkbookPath="Data Kehadiran Mahasiswa.xlsx">
+            <ui:WriteRange.StartingCell>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </ui:WriteRange.StartingCell>
+          </ui:WriteRange>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KirimEmailKeMahasiswaAbsen" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Workflow\KirimEmailKeMahasiswaAbsen.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Pilihan_Mata_Kuliah]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KirimEmailKeDosenWali" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Workflow\KirimEmailKeDosenWali.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Pilihan_Mata_Kuliah]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RekapitulasiKehadiran" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Workflow\RekapitulasiKehadiran.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Mata_Kuliah">[Pilihan_Mata_Kuliah]</InArgument>
+              <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dt_Rekapitulasi_Kehadiran">[dt_Rekapitulasi_Kehadiran]</InOutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KirimEmailRekapitulasi" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Workflow\KirimEmailRekapitulasi.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="ConnectionString">[ConnectionString]</InOutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Nama_Program_Studi">[Pilihan_Nama_Program_Studi]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Tahun_Ajaran">[Pilihan_Tahun_Ajaran]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Pilihan_Semester">[Pilihan_Semester]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
