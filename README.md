@@ -42,4 +42,6 @@
 7. Buka UIPath dan cari Activities "Connect to Database".
 8. Klik "Configure Connection" dan akan muncul menu "Edit Connection Settings"
 9. Pada Data Source pilih "<other>", pada Data Provider pilih ".NET Framework Data Provider for ODBC", dan pada Use user or system data source (32 bit only) pilih nama User Data Source yang sudah ditambahkan tadi.
-10. Klik Test Connection dan jika muncul "Test connection succeeded" maka connect ke database sudah berhasil. Klik Ok
+10. Klik Test Connection dan jika muncul "Test connection succeeded" maka connect ke database sudah berhasil. Klik Ok.
+  
+## Langkah-langkah menjalankan
