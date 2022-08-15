@@ -45,3 +45,5 @@
 10. Klik Test Connection dan jika muncul "Test connection succeeded" maka connect ke database sudah berhasil. Klik Ok.
   
 ## Langkah-langkah menjalankan
+1. Lakukan download projek atau clone project atau dapat menggunakan command 
+  - git clone https://github.com/repoTAD4TRPL/FYP-09-2022.git  di cmd
