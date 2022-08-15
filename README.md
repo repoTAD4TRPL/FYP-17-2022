@@ -23,7 +23,7 @@
 # Konfigurasi untuk menjalanakan aplikasi web atau mobile :
 - Instalasi UiPath Studio
 - Menghubungkan Database ke UiPath
-##Langkah-langkah menjalankan aplikasi web atau mobile
+## Langkah-langkah menjalankan aplikasi web atau mobile
 Instalasi:
 
 1.	Buka UiPath di browser dari link resminya yaitu https://www.uipath.com/
