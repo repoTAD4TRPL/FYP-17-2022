@@ -23,8 +23,10 @@
 - MySQL
 ## Konfigurasi untuk menjalanakan aplikasi web atau mobile :
 - Instalasi UiPath Studio
+- Import Database
 - Menghubungkan Database ke UiPath
 # Langkah-langkah menjalankan aplikasi web atau mobile
+## Lakukan download projek atau clone project menggunakan command.
 ## Instalasi UiPath Studio:
 1. Buka UiPath di browser dari link resminya yaitu https://www.uipath.com/ .
 2. Login ke halaman tersebut dan daftar akun jika belum mempunyai akun pada UiPath.
@@ -32,6 +34,16 @@
 4. Install Studio/StudioX yang telah di download
 5. Jalankan Studio/StudioX yang telah diinstal.
 
+## Import Database
+1. Buka xampp, lalu nyalakan apache dan mysql.
+2. Buka phpMyAdmin pada browser.
+3. Pilih database yang ingin anda import atau buat baru.
+4. Pada tab bagian atas, silakan klik Import.
+5. Setelah itu silakan tekan tombol Choose File atau Browse.
+6. Pilih file database Anda berupa .sql yang berada pada folder Database, kemudian klik Open. Anda akan melihat name file yang Anda pilih di samping tombol Browse. Pastikan Anda memilih SQL pada menu drop down.
+7. Setelah itu klik tombol Go.
+
+## Buka UiPath Studio dan open project yang telah di download atau clone sebelumnya.
 ## Menghubungkan Database ke UiPath:
 1. Buka ODBC Data Source.
 2. Pilih Menu "User DNS" dan klik Add.
@@ -43,7 +55,5 @@
 8. Klik "Configure Connection" dan akan muncul menu "Edit Connection Settings"
 9. Pada Data Source pilih "<other>", pada Data Provider pilih ".NET Framework Data Provider for ODBC", dan pada Use user or system data source (32 bit only) pilih nama User Data Source yang sudah ditambahkan tadi.
 10. Klik Test Connection dan jika muncul "Test connection succeeded" maka connect ke database sudah berhasil. Klik Ok.
-  
-## Langkah-langkah menjalankan
-1. Lakukan download projek atau clone project atau dapat menggunakan command 
-  - git clone https://github.com/repoTAD4TRPL/FYP-09-2022.git  di cmd
+ 
+## Run Project
